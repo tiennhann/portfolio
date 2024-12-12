@@ -4,3 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: 'Nunito', sans-serif; /* Apply Nunito font to the body */
+}

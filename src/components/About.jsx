@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect} from "react";
 import profile from '../assets/images/profile.jpg'
-import FadeInComponent from "./FadeIn";
+import { motion } from "framer-motion";
 
 const About = () => {
     useEffect(() => {
@@ -37,24 +37,34 @@ const About = () => {
     ];
 
     return (
-        <FadeInComponent>
-        <div className="min-h-[50vh] mx-auto max-w-[1000px] pt-[100px] text-white p-4 md:p-8">
-            
+        <motion.div
+            whileInView={{ opacity: 1, y: 0 }}   
+            initial={{ opacity: 0, y: 150 }}
+            transition={{ duration: 1 }}
+            className="min-h-[50vh] mx-auto max-w-[1000px] h-fit  text-white py-8 md:p-8"
+        >
             <div className="section-header mb-4">
                 <span className="section-title text-4xl font-bold">/ about me</span>
             </div>
             <div className="flex flex-col md:flex-row items-center">
-                <div className="text-lg md:w-1/2">
+                <div
+                    className="text-lg md:w-1/2"
+                >
                     {paragraph_one}
                     <p className="text-lg md:text-xl mt-4">Here are some technologies / tech stack I familiar with:</p>
-                    <ul className="list-none grid grid-cols-2 gap-4 mt-2 mb-2">
+                    <motion.ul
+                        whileInView={{ opacity: 1, y: 0 }}   
+                        initial={{ opacity: 0, y: 200 }}
+                        transition={{ duration: 2 }}
+                        className="list-none grid grid-cols-2 gap-4 mt-2 mb-2"
+                    >
                         {tech_stack.map((tech_item, index) => (
                             <li className="relative pl-5 text-lg text-slate-300" key={index}>
-                                <span className="absolute left-0 text-teal-400">•</span>
+                                <span className="absolute left-0 text-cyan-400">•</span>
                                 {tech_item}
                             </li>
                         ))}
-                    </ul>
+                    </motion.ul>
                     {paragraph_two}
                 </div>
                 <div className="md:w-1/2 mt-4 md:mt-0">
@@ -65,8 +75,7 @@ const About = () => {
                 </div>
                 </div>
                 
-        </div>
-        </FadeInComponent>
+        </motion.div>
     );
 };
 
