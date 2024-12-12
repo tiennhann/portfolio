@@ -1,11 +1,12 @@
-
+import React from 'react'
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 
-const App = () => {
+
+function App (){
   return (
     <div className='overflow-x-hidden text-neutral-300 antialiased selection:bg-gray-600 selection:text-neutral-300 font-nunito'>
       <div className="fixed top-0 -z-10 h-full w-full">
